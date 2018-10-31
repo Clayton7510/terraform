@@ -52,6 +52,11 @@ type Backend struct {
 
 var _ backend.Backend = (*Backend)(nil)
 
+// New returns a new initialized Atlas backend.
+func New() *Backend {
+	return &Backend{}
+}
+
 func (b *Backend) ConfigSchema() *configschema.Block {
 	return &configschema.Block{
 		Attributes: map[string]*configschema.Attribute{
